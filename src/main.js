@@ -12,10 +12,14 @@ class Point {
   }
 }
 
-function drawPoint(point) {
+function drawPoint(point, color = '#FFF') {
+  const radius = 4;
+
+  context.clearRect(point.x, height - point.y, radius, radius);
+
   context.beginPath();
-  context.arc(point.x, point.y, 4, 0, 2 * Math.PI, false);
-  context.fillStyle = '#FFF';
+  context.arc(point.x, height - point.y, radius, 0, 2 * Math.PI, false);
+  context.fillStyle = color;
   context.fill();
 }
 
@@ -31,11 +35,27 @@ function drawRandomPoints(quantity) {
   }
 }
 
-function createConvexHull(points) {
-  // Get the last point on left.
-  
-} 
+/**
+ * Math functions
+ */
+
+function crossProduct() {
+  // Implement cross product logic.
+}
+
+/**
+ * Convex Hull methods.
+ */
+
+function jarvisMarch(points) {
+  // Get the first Y point.
+  const decrescent = [...points].sort((a, b) => a.y - b.y);
+  console.log(points);
+  const firstPoint = decrescent[0];
+
+  drawPoint(firstPoint, 'green');
+}
 
 drawRandomPoints(10);
-createConvexHull(points);
+jarvisMarch(points);
 
