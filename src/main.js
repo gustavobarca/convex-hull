@@ -12,6 +12,8 @@ class Point {
   }
 }
 
+// Testing branch
+
 function drawPoint(point, color = '#FFF') {
   const radius = 4;
 
